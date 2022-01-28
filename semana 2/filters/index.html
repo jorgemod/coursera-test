@@ -1,0 +1,24 @@
+ <!DOCTYPE html>
+ <!-- con ng-app invocas el modulo -->
+ <html lang="en" ng-app="MsgApp">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="angular.min.js"></script>
+     <script src="app.js"></script>
+
+    
+     <title>Document</title>
+ </head>
+ <body>
+     <!-- con ng-controller invocas el controlador solo en ese pedazo de codigo -->
+     <div ng-controller="MsgController">
+         <h1>Custom Filters</h1>
+         <h4>Solo vamos a cambiar la palabra likes por loves</h4>
+         <p>Este es el mensaje: {{msg}}</p>
+         <p>Este es el mensaje después del filtro personalizado: {{msgFilter}}</p>
+        
+     </div>
+ </body>
+ </html>
