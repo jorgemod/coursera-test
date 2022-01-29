@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="NGRepeat">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div ng-controller="NGRepeatController">
+        <h1>NG Repeat</h1>
+        <ul>
+            <li ng-repeat="item in lista">{{$index + 1}}.- nombre : {{item.nombre}} | edad: {{item.edad}}</li>
+        </ul>
+
+        <input type="text" ng-model="name" placeholder="nombre">
+        <input type="text" ng-model="edad" placeholder="edad">
+        <button ng-click="agregar()">Agregar</button>
+    </div>
+</body>
+</html>
