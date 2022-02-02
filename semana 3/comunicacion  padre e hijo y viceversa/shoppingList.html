@@ -1,0 +1,9 @@
+<h3>Title: {{ list.myTitle }}</h3>
+<ol>
+  <li ng-repeat="item in list.items">
+    {{ item.quantity }} of {{ item.name }}
+    <!-- gracias a la propiedad onRemove podemos enviar estos valores al padre siempre y cuando coincidan con los argumentos en el padre -->
+    <button ng-click="list.onRemove({index: $index, test:2});">Remove Item</button>
+  </li>
+</ol>
+<div class="error" ng-if="list.cookiesInList()">WARNING! WARNING! COOKIES DETECTED!</div>
