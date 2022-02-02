@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = "ControllerAsSintax">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Parent and child communication</title>
+</head>
+<body>
+    <h1>Comunicacion entre padre e hijo a través de AS sintax</h1>
+    <!-- aqui se pueden ver dos controllers que están anidados y desde el hijo accedemos a los valores del padre  -->
+    <div ng-controller="ParentController as parent">
+        parent value: {{parent.value}}
+        <!-- ocupamos el as sintax para renombrar y acceder a sus propiedades del controlladory como están anidados entonces podemos escalar a sus valores padre -->
+        <div ng-controller="ChildController as child">
+            child value: {{child.value}} 
+            parent value: {{parent.value}}
+        </div>
+
+    </div>
+</body>
+</html>
