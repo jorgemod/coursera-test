@@ -1,0 +1,7 @@
+<ul>
+  <!-- aquí nos movemos a la vista y le mandamos los params como un objecto clave valor -->
+  <li ng-repeat="item in $ctrl.items"
+      ui-sref="itemDetail({itemId: $index})">
+    {{ item.quantity }} of {{ item.name }}
+  </li>
+</ul>
