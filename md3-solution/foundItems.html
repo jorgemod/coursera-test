@@ -3,7 +3,15 @@
     <h1>What i found</h1>
     <ul>
         <li ng-repeat="item in narrow.items">
+            <span>
+                name:
+            </span>
             {{item.name}}
+            <span>
+                description:
+
+            </span>
+            {{item.description}}
             <button class="btn btn-danger" ng-click="narrow.onRemove({index: $index})">Don't want this one!</button>
         </li>
     </ul>
