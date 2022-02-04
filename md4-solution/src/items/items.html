@@ -1,0 +1,12 @@
+<a ui-sref="categories">back to list</a>
+
+<h1> {{ item.short_name }}</h1>
+
+
+<ul>
+    <li ng-repeat="item in item.items">
+      <b>name:</b>  {{item.name}}
+      <br>
+      <b> Description: </b>  {{item.description}}
+    </li>
+</ul>
