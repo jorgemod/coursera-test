@@ -1,0 +1,69 @@
+<div class="container">
+
+    <form name="signup" novalidate class="form">
+        <div class="form-group"> 
+            <label for="fname">First Name</label>
+            <input class="form-control" type="text" name="fname" id="fname" placeholder="First Name" ng-model="signUpCtrl.fname"
+            required
+            minlength="4"
+            ng-maxlength="10">
+            <span
+            class="label label-danger"
+            ng-if="(signup.fname.$error.minlength || signup.fname.$error.required) && signup.fname.$touched">
+            Username must be at least 4 characters long
+            </span>
+            <span 
+            class="label label-danger"
+            ng-if="signup.fname.$error.maxlength && signup.fname.$touched">
+            Username must not be longer than 10 characters
+            </span>
+            
+        </div>
+        <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input class="form-control" type="text" name="lname" id="lname" placeholder="Last Name" ng-model="signUpCtrl.lname"
+            required
+            minlength="4"
+            ng-maxlength="10">
+
+            <span
+            class="label label-danger"
+            ng-if="(signup.lname.$error.minlength || signup.lname.$error.required) && signup.lname.$touched">
+            Last name must be at least 4 characters long
+            </span>
+            <span 
+            class="label label-danger"
+            ng-if="signup.lname.$error.maxlength && signup.lname.$touched">
+            Last name must not be longer than 10 characters
+            </span>
+            
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input class="form-control" type="email" name="email" id="email" placeholder="Email" required ng-model="signUpCtrl.email">
+            
+
+            <span ng-if="signup.email.$invalid && signup.email.$touched" class="label label-danger">
+                Must be a valid email address: handle@domain format
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="fnumber">Phone Number</label>
+            <input class="form-control" type="tel" name="fnumber" id="fnumber" placeholder="###-###-####" pattern="(\d{3})-(\d{3})-(\d{4})" ng-model="signUpCtrl.fnumber" required>
+
+            <span class="label label-danger"  ng-if="signup.fnumber.$invalid && signup.fnumber.$touched">
+                Phone must be in the format ###-###-####.
+            </span>
+            
+        </div>
+        <div class="form-group">
+            <label for="mnumber">Menu </label>
+            <input class="form-control" type="text" name="mnumber" id="mnumber" placeholder="A1" ng-model="signUpCtrl.mnumber" required>
+            
+        </div>
+        <button class="btn btn-success" type="submit" ng-disabled="signup.$invalid" ng-click="signUpCtrl.submit()" >Submit</button>
+    </form>
+
+    <span ng-if="signUpCtrl.success" class="label label-success">{{signUpCtrl.response}}</span>
+    <span ng-if="!signUpCtrl.success" class="label label-danger">{{signUpCtrl.response}}</span>
+</div>

@@ -1,0 +1,25 @@
+<div class="container" ng-if="myinfo.empty">
+    <h1  >
+        Not Signed Up Yet. <a ui-sref="public.signup">
+            Sign up Now!
+        </a> 
+    </h1>
+
+</div>
+
+<div class="container" ng-if="!myinfo.empty">
+    <h1>First Name</h1>
+    <h3 class="text-warning">{{myinfo.data.name}}</h3>
+    <h1>Last Name</h1>
+    <h3 class="text-warning" >{{myinfo.data.lname}}</h3>
+    <h1 >Email</h1>
+    <h3 class="text-warning">{{myinfo.data.email}}</h3>
+    <h1>Phone Number</h1>
+    <h3 class="text-warning">{{myinfo.data.fnumber}}</h3>
+    <h1>Favorite Item</h1>
+    <img class="img-responsive" width="250" height="150" ng-src="{{myinfo.basePath}}/images/{{myinfo.data.item.picture}}.jpg" alt="{{myinfo.data.item.name}}">
+    <h3 class="text-warning">{{myinfo.data.item.name}}</h3>
+    <h3 class="text-warning">{{myinfo.data.item.description}}</h3>
+    
+
+</div>
